@@ -1,0 +1,69 @@
+{
+	"components": {
+		"AlertModal": {
+			"okay": "Okay"
+		},
+		"AudioInputDeviceSelect": {
+			"label": "Input device",
+			"placeholder": "Select an input device"
+		},
+		"DisplayDurationSelect": {
+			"label": "Display duration",
+			"twoSeconds": "2 seconds",
+			"fiveSeconds": "5 seconds",
+			"tenSeconds": "10 seconds",
+			"infinite": "infinite"
+		},
+		"LanguageSelect": {
+			"label": "Language",
+			"languages": {
+				"de": "German",
+				"en": "English"
+			},
+			"placeholder": "Select a language"
+		},
+		"PitchCard": {
+			"perfect": "Perfect!",
+			"tooHigh": "Too high",
+			"tooLow": "Too low"
+		},
+		"RecordButton": {
+			"mediaDevicesNotPermittedAlert": {
+				"description": "Allow the usage of the microphone in the browser settings.",
+				"title": "The audio track cannot be recorded"
+			},
+			"mediaDevicesNotSupportedAlert": {
+				"description": "This browser does not support this feature.",
+				"title": "The audio track cannot be recorded"
+			},
+			"startRecording": "Start recording",
+			"stopRecording": "Stop recording"
+		},
+		"SensitivitySlider": {
+			"sensitivity": "Sensitivity"
+		},
+		"SettingsDropdown": {
+			"application": "Application",
+			"behavior": "Behavior",
+			"device": "Device",
+			"displayDuration": "Display duration",
+			"inputDevice": "Input device",
+			"microphoneNotPermittedAlert": {
+				"description": "Enable microphone permissions to select an audio device.",
+				"title": "Missing permissions"
+			},
+			"recording": "Recording",
+			"sensitivity": "Sensitivity"
+		},
+		"ThemeSelect": {
+			"label": "Theme",
+			"default": "Browser default"
+		}
+	},
+	"enums": {
+		"Theme": {
+			"DARK": "Dark",
+			"LIGHT": "Light"
+		}
+	}
+}

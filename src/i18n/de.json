@@ -1,0 +1,69 @@
+{
+	"components": {
+		"AlertModal": {
+			"okay": "Okay"
+		},
+		"AudioInputDeviceSelect": {
+			"label": "Eingabegerät",
+			"placeholder": "Wähle ein Eingabegerät aus"
+		},
+		"DisplayDurationSelect": {
+			"label": "Anzeigedauer",
+			"twoSeconds": "2 Sekunden",
+			"fiveSeconds": "5 Sekunden",
+			"tenSeconds": "10 Sekunden",
+			"infinite": "Unbegrenzt"
+		},
+		"LanguageSelect": {
+			"label": "Sprache",
+			"languages": {
+				"de": "Deutsch",
+				"en": "Englisch"
+			},
+			"placeholder": "Wähle eine Sprache aus"
+		},
+		"PitchCard": {
+			"perfect": "Perfekt!",
+			"tooHigh": "Zu hoch",
+			"tooLow": "Zu tief"
+		},
+		"RecordButton": {
+			"mediaDevicesNotPermittedAlert": {
+				"description": "Aktiviere die Berechtigung für die Nutzung des Mikrofons im Browser.",
+				"title": "Die Tonspur kann nicht aufgezeichnet werden"
+			},
+			"mediaDevicesNotSupportedAlert": {
+				"description": "Der genutzte Browser unterstützt dieses Feature nicht.",
+				"title": "Die Tonspur kann nicht aufgezeichnet werden"
+			},
+			"startRecording": "Aufnahme starten",
+			"stopRecording": "Aufnahme beenden"
+		},
+		"SensitivitySlider": {
+			"sensitivity": "Empfindlichkeit"
+		},
+		"SettingsDropdown": {
+			"application": "Anwendung",
+			"behavior": "Verhalten",
+			"device": "Gerät",
+			"displayDuration": "Anzeigedauer",
+			"inputDevice": "Aufnahmegerät",
+			"microphoneNotPermittedAlert": {
+				"description": "Aktiviere die Berechtigung für die Nutzung des Mikrofons im Browser.",
+				"title": "Fehlende Berechtigungen"
+			},
+			"recording": "Aufnahme",
+			"sensitivity": "Empfindlichkeit"
+		},
+		"ThemeSelect": {
+			"label": "Thema",
+			"default": "Browserstandart"
+		}
+	},
+	"enums": {
+		"Theme": {
+			"DARK": "Dunkel",
+			"LIGHT": "Hell"
+		}
+	}
+}

@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+	font-family: "Open Sans";
+	src: url("../public/fonts/OpenSans-VariableFont_wdth,wght.woff2")
+		format("woff2"), url("../public/fonts/OpenSans-VariableFont_wdth,wght.ttf")
+		format("truetype");
+	font-weight: 100 900;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Open Sans";
+	src: url("../public/fonts/OpenSans-Italic-VariableFont_wdth,wght.woff2")
+		format("woff2"),
+		url("../public/fonts/OpenSans-Italic-VariableFont_wdth,wght.ttf")
+		format("truetype");
+	font-weight: 100 900;
+	font-style: italic;
+}
+
+body {
+	overscroll-behavior: none;
+}
