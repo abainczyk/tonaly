@@ -5,6 +5,7 @@ import { useState } from "react";
 import { currentPitchState } from "../states/currentPitchState.ts";
 import { PianoKey } from "../types/pianoKey.ts";
 import { displayDurationState } from "../states/displayDurationState.tsx";
+import { BASE_URL } from "../config/environments.ts";
 
 const sampler = new Sampler({
 	urls: {
@@ -18,7 +19,7 @@ const sampler = new Sampler({
 		C8: "C8.mp3",
 	},
 	release: 1,
-	baseUrl: "/audio/",
+	baseUrl: `${BASE_URL}/audio/`,
 }).toDestination();
 
 export const usePlayer = () => {
