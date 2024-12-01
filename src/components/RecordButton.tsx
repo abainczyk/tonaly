@@ -3,20 +3,14 @@ import { useRecoilValue, useSetRecoilState } from "recoil";
 import { currentPianoKeyState } from "../states/currentPianoKeyState.ts";
 import { PitchDetector } from "pitchy";
 import { Button, useDisclosure } from "@nextui-org/react";
-import {
-	audioInputDeviceSensitivityState,
-	currentAudioInputDeviceState,
-} from "../states/audioInputDevicesState.ts";
+import { audioInputDeviceSensitivityState, currentAudioInputDeviceState, } from "../states/audioInputDevicesState.ts";
 import { usePianoKeys } from "../hooks/usePianoKeys.ts";
 import PlayCircleIcon from "@mui/icons-material/PlayCircle";
 import StopCircleIcon from "@mui/icons-material/StopCircle";
 import { usePrefixTranslation } from "../hooks/usePrefixTranslation.ts";
 import { AlertModal } from "./AlertModal.tsx";
 import { currentPitchState } from "../states/currentPitchState.ts";
-import {
-	microphonePermittedState,
-	microphoneSupportedState,
-} from "../states/microphoneState.ts";
+import { microphoneSupportedState, } from "../states/microphoneState.ts";
 import { displayDurationState } from "../states/displayDurationState.tsx";
 
 const FFT_SIZE = 4096;
@@ -30,7 +24,6 @@ export const RecordButton: FC = () => {
 	const setCurrentPitch = useSetRecoilState(currentPitchState);
 	const selectedAudioInputDevice = useRecoilValue(currentAudioInputDeviceState);
 	const microphoneSupported = useRecoilValue(microphoneSupportedState);
-	const microphonePermitted = useRecoilValue(microphonePermittedState);
 	const displayDuration = useRecoilValue(displayDurationState);
 	const sensitivity = useRecoilValue(audioInputDeviceSensitivityState);
 	const [isRecording, setIsRecording] = useState(false);
@@ -46,9 +39,6 @@ export const RecordButton: FC = () => {
 	const startRecording = async () => {
 		if (!microphoneSupported) {
 			mediaDevicesNotSupportedDisclosure.onOpen();
-			return;
-		} else if (!microphonePermitted) {
-			mediaDevicesNotPermittedDisclosure.onOpen();
 			return;
 		}
 
@@ -69,6 +59,9 @@ export const RecordButton: FC = () => {
 			detectPitch();
 		} catch (error) {
 			console.error("Error starting audio recording: ", error);
+			if (error instanceof DOMException && error.name === "NotAllowedError") {
+				mediaDevicesNotPermittedDisclosure.onOpen();
+			}
 		}
 	};
 
