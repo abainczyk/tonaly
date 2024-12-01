@@ -3,7 +3,7 @@ import { Home } from "./components/Home.tsx";
 
 export const router = createBrowserRouter([
 	{
-		path: "/",
+		path: "",
 		element: <Home />,
 	},
 ]);
