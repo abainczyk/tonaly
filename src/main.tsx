@@ -6,10 +6,13 @@ import { NextUIProvider } from "@nextui-org/react";
 import { AudioInputDevicesProvider } from "./providers/AudioInputDevicesProvider.tsx";
 import { RouterProvider } from "react-router-dom";
 import "./i18n/i18n.ts";
-import { ThemeProvider } from "./providers/ThemeProvider.tsx";
 import { PianoKeysProvider } from "./providers/PianoKeysProvider.tsx";
 import { MicrophoneStateProvider } from "./providers/MicrophoneStateProvider.tsx";
 import { router } from "./router.tsx";
+import { initializeTheme } from "./utils/themeUtils.ts";
+
+// Initialize theme outside react to prevent flickering
+initializeTheme()
 
 createRoot(document.getElementById("root")!).render(
 	<StrictMode>
@@ -17,11 +20,9 @@ createRoot(document.getElementById("root")!).render(
 			<NextUIProvider>
 				<MicrophoneStateProvider>
 					<AudioInputDevicesProvider>
-						<ThemeProvider>
-							<PianoKeysProvider>
-								<RouterProvider router={router} />
-							</PianoKeysProvider>
-						</ThemeProvider>
+						<PianoKeysProvider>
+							<RouterProvider router={router} />
+						</PianoKeysProvider>
 					</AudioInputDevicesProvider>
 				</MicrophoneStateProvider>
 			</NextUIProvider>
