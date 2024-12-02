@@ -19,7 +19,7 @@ const sampler = new Sampler({
 		C8: "C8.mp3",
 	},
 	release: 1,
-	baseUrl: `${BASE_URL}/audio/`,
+	baseUrl: `${BASE_URL === "/" ? "" : BASE_URL}/audio/`,
 }).toDestination();
 
 export const usePlayer = () => {

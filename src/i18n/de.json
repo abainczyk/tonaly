@@ -37,7 +37,7 @@
 				"title": "Die Tonspur kann nicht aufgezeichnet werden"
 			},
 			"startRecording": "Aufnahme starten",
-			"stopRecording": "Aufnahme beenden"
+			"stopRecording": "Aufnahme stoppen"
 		},
 		"SensitivitySlider": {
 			"sensitivity": "Empfindlichkeit"
