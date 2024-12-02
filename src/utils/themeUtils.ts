@@ -29,7 +29,7 @@ export const initializeTheme = () => {
 			}
 		}
 	} catch (error) {
-		console.error('Error parsing theme from localStorage:', error);
+		console.error("Error parsing theme from localStorage:", error);
 	}
 
 	// Apply preferred theme if no valid theme is found

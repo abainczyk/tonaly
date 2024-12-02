@@ -18,11 +18,13 @@ import { useThemeState } from "../hooks/useThemeState.tsx";
 import { colors } from "../utils/tailwindUtils.ts";
 import { PianoKey } from "../types/pianoKey.ts";
 import { Theme } from "../types/theme.ts";
+import { usePlayer } from "../hooks/usePlayer.ts";
 
 export const NoteCard: FC<PropsWithClassName> = ({ className }) => {
 	const currentNote = useRecoilValue(currentPianoKeyState);
 	const { getPianoKeyWindow } = usePianoKeys();
 	const { theme } = useThemeState();
+	const { play } = usePlayer();
 
 	const containerRef = useRef<HTMLDivElement | null>(null);
 
@@ -90,6 +92,7 @@ export const NoteCard: FC<PropsWithClassName> = ({ className }) => {
 						const active = key?.note === currentNote?.note;
 						const classes = classNames({
 							"bg-gray-100 dark:bg-zinc-800": key == null,
+							"hover:cursor-pointer": key != null,
 							"bg-gray-200 dark:bg-zinc-700": key != null && !active,
 							"bg-primary dark:bg-primary text-white": key != null && active,
 						});
@@ -97,6 +100,7 @@ export const NoteCard: FC<PropsWithClassName> = ({ className }) => {
 							<div
 								className={`p-2 flex items-center justify-center rounded-lg ${classes}`}
 								key={index}
+								onClick={() => key && play(key)}
 							>
 								{key?.localizedNote ?? <span>&nbsp;</span>}
 							</div>

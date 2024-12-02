@@ -12,7 +12,7 @@ import { router } from "./router.tsx";
 import { initializeTheme } from "./utils/themeUtils.ts";
 
 // Initialize theme outside react to prevent flickering
-initializeTheme()
+initializeTheme();
 
 createRoot(document.getElementById("root")!).render(
 	<StrictMode>
